@@ -17,8 +17,9 @@ function App() {
 
   return (
     <div>
-      App is running - good work you who wrote this app: 
+      App is running - good work you who wrote this app:
       { names.map(author => author.firstName + " ")}
+      <div>HELLO WORLD! </div>
     </div>
   );
 }
