@@ -18,7 +18,8 @@ function run() {
     .catch(err => {
         core.notice("ERROR IS HERE")
         core.notice(err)
-        core.notice('serv id', serviceId);
+        core.notice('serv id');
+        core.notice(serviceId)
     });
 }
 
