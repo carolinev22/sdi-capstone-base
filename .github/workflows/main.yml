@@ -82,14 +82,13 @@ jobs:
         run: npm --prefix ./ui run lint
   deploy:
     needs: build-and-test-ui
-    name: Deploy UI
+    name: DeployUI
     runs-on: ubuntu-latest
     steps:
-      # Runs a single command using the runners shell to build the UI
-      - name: Checkout code
+      - name: Get code
         uses: actions/checkout@v3
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
+      - name: Deploy site
+        uses: ./.github/actions/deploy-render
         with:
-          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
