@@ -85,10 +85,11 @@ jobs:
     name: Deploy UI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       # Runs a single command using the runners shell to build the UI
-      - uses: actions/checkout@v3
-      - uses: JorgeLNJunior/render-deploy@v1.4.4
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service_id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api_key: ${{ secrets.MY_RENDER_API_KEY }}
