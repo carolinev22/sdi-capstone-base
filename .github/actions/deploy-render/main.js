@@ -4,6 +4,7 @@ const core = require('@actions/core');
 function run() {
     const key = core.getInput('api-key', { required: true })
     const serviceId = core.getInput('service-id', { required: true })
+
     sdk.auth(key);
     sdk.createDeploy({
         clearCache: 'do_not_clear',
@@ -17,6 +18,7 @@ function run() {
     .catch(err => {
         core.notice("ERROR IS HERE")
         core.notice(err)
+        core.notice('serv id', serviceId);
     });
 }
 
