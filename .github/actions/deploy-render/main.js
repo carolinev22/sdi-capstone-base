@@ -14,7 +14,10 @@ function run() {
         core.notice("Result of deploy: ")
         core.notice(data)
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+        core.notice("ERROR IS HERE")
+        core.notice(err)
+    });
 }
 
 run();
