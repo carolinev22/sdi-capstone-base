@@ -8,8 +8,6 @@ function run() {
     sdk.auth(key);
     sdk.createDeploy({
         clearCache: 'do_not_clear',
-        commitId: 'string',
-        imageUrl: 'string'
     }, {serviceId: serviceId})
     .then(({ data }) => {
         core.notice("Result of deploy: ")
@@ -18,8 +16,6 @@ function run() {
     .catch(err => {
         core.notice("ERROR IS HERE")
         core.notice(err)
-        core.notice('serv id');
-        core.notice(serviceId)
     });
 }
 
