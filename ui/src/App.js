@@ -19,7 +19,7 @@ function App() {
     <div>
       App is running - good work you who wrote this app:
       { names.map(author => author.firstName + " ")}
-      <div>HELLO WORLD! </div>
+      <div>HELLO HERE IS A CHANGE WHOO!</div>
     </div>
   );
 }
