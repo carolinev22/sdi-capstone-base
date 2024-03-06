@@ -2,7 +2,7 @@ const sdk = require('api')('@render-api/v1.0#ja8rb1jlsxhh7qu');
 const core = require('@actions/core');
 
 function run() {
-    const key = core.getInput('auth-key', { required: true })
+    const key = core.getInput('api-key', { required: true })
     const serviceId = core.getInput('service-id', { required: true })
     sdk.auth(key);
     sdk.createDeploy({
