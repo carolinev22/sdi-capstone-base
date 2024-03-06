@@ -81,9 +81,15 @@ jobs:
       - name: Run Linter
         run: npm --prefix ./ui run lint
   deploy:
+    needs: build-and-test-ui
     name: Deploy UI
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      # Runs a single command using the runners shell to build the UI
+      - name: Build UI
+        run: |
+          docker build -t capstone-ui ./ui
       - name: Deploy to Render
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
